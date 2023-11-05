@@ -28,7 +28,7 @@ class MetingJSElement extends HTMLElement {
     let keys = [
       'server', 'type', 'id', 'api', 'auth',
       'auto', 'lock',
-      'name', 'title', 'artist', 'author', 'url', 'cover', 'pic', 'lyric', 'lrc',
+      'name', 'title', 'artist', 'author', 'url', 'cover', 'pic', 'lyric', 'lrc','local', 'path',
     ]
     this.meta = {}
     for (let key of keys) {
@@ -101,7 +101,16 @@ class MetingJSElement extends HTMLElement {
 
     fetch(url)
       .then(res => res.json())
-      .then(result => this._loadPlayer(result))
+      .then(result => {
+        if(this.meta.local)
+        {
+            let base_url = this.meta.path || "/music/";
+            result.forEach(song => {
+                song.url = base_url + song.name + ".mp3";
+            });
+        }
+        this._loadPlayer(result)
+    })
   }
 
   _loadPlayer(data) {

@@ -1,3 +1,34 @@
+# new
+
+写在开头，本仓库相对于原仓库，添加了local功能，即本地音乐播放，使用方法如下：
+
+```html
+<meting-js
+	server="tencent"
+	type="playlist"
+	id="8976385915"
+    local="true"
+    path="/music/">
+</meting-js>
+```
+
+local为true时，将使用本地音乐播放，本地音乐路径为默认为/music/，可自定义, 音乐名同meting-js获取的音乐名name字段， 例如：
+
+```json
+[
+    {
+        "name": "怎么了",
+        "artist": "周杰伦\/袁咏琳",
+        "url": "https:\/\/api.injahow.cn\/meting\/?server=tencent&type=url&id=001zqHER0WFQvO",
+        "pic": "https:\/\/api.injahow.cn\/meting\/?server=tencent&type=pic&id=001uqejs3d6EID",
+        "lrc": "https:\/\/api.injahow.cn\/meting\/?server=tencent&type=lrc&id=001zqHER0WFQvO"
+    }
+]
+```
+
+则音乐文件路径为/music/怎么了.mp3
+
+---
 <p align="center">
 <img src="https://user-images.githubusercontent.com/2666735/30651452-58ae6c88-9deb-11e7-9e13-6beae3f6c54c.png" alt="Meting">
 </p>
