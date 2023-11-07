@@ -1,18 +1,17 @@
 # new
 
-写在开头，本仓库相对于原仓库，添加了local功能，即本地音乐播放，使用方法如下：
+写在开头，本仓库相对于原仓库，添加了自定义音乐文件路径功能，使用方法如下：
 
 ```html
 <meting-js
 	server="tencent"
 	type="playlist"
 	id="8976385915"
-    local="true"
     path="/music/">
 </meting-js>
 ```
 
-local为true时，将使用本地音乐播放，本地音乐路径为默认为/music/，可自定义, 音乐名同meting-js获取的音乐名name字段， 例如：
+path为音乐文件夹路径,支持相对路径与绝对路径, 音乐名同meting-js获取的音乐名name字段， 例如：
 
 ```json
 [
